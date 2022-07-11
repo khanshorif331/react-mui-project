@@ -1,9 +1,12 @@
 import {
 	Avatar,
 	Box,
+	Button,
+	ButtonGroup,
 	Fab,
 	IconButton,
 	Modal,
+	Stack,
 	TextField,
 	Tooltip,
 	Typography,
@@ -11,6 +14,11 @@ import {
 import React, { useState } from 'react'
 import AddIcon from '@mui/icons-material/Add'
 import styled from '@emotion/styled'
+import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions'
+import VideoCameraBackIcon from '@mui/icons-material/VideoCameraBack'
+import PersonAddIcon from '@mui/icons-material/PersonAdd'
+import ImageIcon from '@mui/icons-material/Image'
+import DateRangeIcon from '@mui/icons-material/DateRange'
 
 const Add = () => {
 	const [open, setOpen] = useState(false)
@@ -76,6 +84,24 @@ const Add = () => {
 						placeholder="What's on your Mind ?"
 						variant='standard'
 					/>
+					<Stack direction='row' gap={1} mt={2} mb={3}>
+						<EmojiEmotionsIcon color='primary'></EmojiEmotionsIcon>
+						<ImageIcon color='secondary'></ImageIcon>
+						<VideoCameraBackIcon color='success'></VideoCameraBackIcon>
+						<PersonAddIcon color='error'></PersonAddIcon>
+						{/* <EmojiEmotionsIcon></EmojiEmotionsIcon>
+						<EmojiEmotionsIcon></EmojiEmotionsIcon> */}
+					</Stack>
+					<ButtonGroup
+						fullWidth
+						variant='contained'
+						aria-label='outlined primary button group'
+					>
+						<Button>Post</Button>
+						<Button sx={{ width: '100px' }}>
+							<DateRangeIcon></DateRangeIcon>
+						</Button>
+					</ButtonGroup>
 				</Box>
 			</StyledModal>
 		</>
