@@ -4,11 +4,13 @@ import {
 	Badge,
 	Box,
 	InputBase,
+	Menu,
+	MenuItem,
 	styled,
 	Toolbar,
 	Typography,
 } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import { Pets, Mail, Notifications } from '@mui/icons-material'
 
 const StyledToolbar = styled(Toolbar)({
@@ -37,6 +39,7 @@ const UserBox = styled(Box)(({ theme }) => ({
 }))
 
 const Navbar = () => {
+	const [open, setOpen] = useState(false)
 	return (
 		<AppBar position='sticky'>
 			<StyledToolbar>
@@ -62,10 +65,14 @@ const Navbar = () => {
 						sx={{ width: 30, height: 30 }}
 						alt='Shoriful Islam'
 						src='/static/images/avatar/2.jpg'
+						onClick={e => setOpen(true)}
 					/>
 				</Icons>
 				{/* for mobile device */}
-				<UserBox sx={{ display: { xs: 'flex', sm: 'none' } }}>
+				<UserBox
+					sx={{ display: { xs: 'flex', sm: 'none' } }}
+					onClick={e => setOpen(true)}
+				>
 					<Avatar
 						sx={{
 							width: 30,
@@ -77,6 +84,25 @@ const Navbar = () => {
 					<Typography variant='span'>SHORIF</Typography>
 				</UserBox>
 			</StyledToolbar>
+			{/* profile */}
+			<Menu
+				id='demo-positioned-menu'
+				aria-labelledby='demo-positioned-button'
+				open={open}
+				onClose={e => setOpen(false)}
+				anchorOrigin={{
+					vertical: 'top',
+					horizontal: 'right',
+				}}
+				transformOrigin={{
+					vertical: 'top',
+					horizontal: 'right',
+				}}
+			>
+				<MenuItem>Profile</MenuItem>
+				<MenuItem>My account</MenuItem>
+				<MenuItem>Logout</MenuItem>
+			</Menu>
 		</AppBar>
 	)
 }
