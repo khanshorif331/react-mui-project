@@ -64,7 +64,7 @@ const Navbar = () => {
 					<Avatar
 						sx={{ width: 30, height: 30 }}
 						alt='Shoriful Islam'
-						src='/static/images/avatar/2.jpg'
+						src='https://material-ui.com/static/images/avatar/2.jpg'
 						onClick={e => setOpen(true)}
 					/>
 				</Icons>
@@ -79,7 +79,7 @@ const Navbar = () => {
 							height: 30,
 						}}
 						alt='Shoriful Islam'
-						src='/static/images/avatar/2.jpg'
+						src='https://material-ui.com/static/images/avatar/2.jpg'
 					/>
 					<Typography variant='span'>SHORIF</Typography>
 				</UserBox>
